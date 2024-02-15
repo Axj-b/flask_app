@@ -1,0 +1,26 @@
+/* Customize here if needed */
+
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+    text-align: center;
+}
+
+form {
+    max-width: 400px;
+    margin: auto;
+    margin-top: 4rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    /* Optional background color for the footer */
+}
