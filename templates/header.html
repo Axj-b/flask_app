@@ -28,6 +28,12 @@
                     <li class="nav-item">
                         <a class="nav-link {{'active' if active_page == 'About' else '' }}" href="/about">About</a>
                     </li>
+                    {% if active_page == 'About' %}
+                    
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/Upload">Upload</a>
+                    </li>
+                    {% endif %}
                 </ul>
                 {% if 'logged_in' in session %}
                 <a class="btn btn-outline-danger" href="{{ url_for('logout') }}">Logout</a> {% else %}

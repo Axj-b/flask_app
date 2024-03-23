@@ -16,7 +16,7 @@
         <div>
             <button type="button" class="btn btn-success">Clock in</button>
             <button type="button" class="btn btn-danger">Clock out</button>
-            <form method="post" action="{{ url_for('upload') }}">
+            <form method="get" action="{{ url_for('upload') }}">
                 <button type="submit" class="btn btn-danger" href="{{ url_for( 'upload') }} ">Upload Image</button>
             </form>
         </div>

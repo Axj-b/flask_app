@@ -2,11 +2,16 @@ from flask import Flask, render_template, request, redirect, url_for, session
 import config_main
 from auth import login_route , logout_route
 from upload import upload_image, show_uploaded_file
+from werkzeug.middleware.proxy_fix import ProxyFix
+
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Change this to a secure, random key
 app.config['UPLOAD_FOLDER'] = 'uploads' 
 
+# app.wsgi_app = ProxyFix(
+#     app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_prefix=1
+# )
 
 @app.route("/")
 def home():
@@ -48,4 +53,4 @@ def logout():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0', port=8080)
+    app.run(debug=False, host='0.0.0.0', port=5556)
