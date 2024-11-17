@@ -13,6 +13,14 @@
     {% set active_page = "Projects" %} {% include 'header.html' %}
     <main>
         My Projects!!!
+        <ul>
+            <a class="nav-link {{'active' if active_page == 'Projects' else '' }}" href="/projects">Projects</a>
+            <li>
+                <a href="/strom">Project 1</a></li>
+            <li><a href="https://example.com/project2 ">Project 2</a></li>
+            <li><a href="https://example.com/project3 ">Project 3</a></li>
+
+        </ul>
     </main>
     {% include 'footer.html' %}
 </body>

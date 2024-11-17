@@ -4,6 +4,7 @@ from auth import login_route , logout_route
 from upload import upload_image, show_uploaded_file
 from werkzeug.middleware.proxy_fix import ProxyFix
 
+from projects.projectStrom import *
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Change this to a secure, random key
@@ -51,6 +52,9 @@ def login():
 def logout():
     return logout_route()
 
-
+# Register the blueprint for the project Strom route
+app.register_blueprint(create_prj_strom_blueprint(app))
+    
+    
 if __name__ == "__main__":
     app.run(debug=False, host='0.0.0.0', port=5556)

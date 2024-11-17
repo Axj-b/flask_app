@@ -9,7 +9,10 @@ def login_route():
         with open("login_try.txt", '+a') as f:
             f.writelines(f"\n username: {username}, password: {username}")
         # For demonstration purposes, let's use a simple check
-        if username == 'afarmaks' and password == '232ßxynw430sdn23sd':
+        if username == 'makaka' and password == '321-bunte-eier':
+            session['logged_in'] = True
+            return redirect(url_for('home'))
+        elif username == 'afarmaks' and password == '232ßxynw430sdn23sd':
             session['logged_in'] = True
             return redirect(url_for('home'))
         else:
